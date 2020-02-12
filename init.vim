@@ -69,7 +69,7 @@ endfunction
 " lightline configuration
 let g:lightline = {
 	\ 'active': {
-	\ 	'left': [['mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified']]
+	\ 	'left': [['mode', 'paste' ], ['gitbranch', 'readonly', 'relativepath', 'modified']]
 	\ },
 	\ 'component_function': {
 	\ 	'gitbranch': 'fugitive#head'
