@@ -76,3 +76,8 @@ let g:lightline = {
 	\ },
 	\ }
 
+" use rg as grepprg if available
+if executable("rg")
+	let &grepprg="rg --vimgrep $*"
+end
+
