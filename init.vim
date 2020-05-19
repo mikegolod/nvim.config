@@ -21,10 +21,14 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 call plug#end()
 
 colorscheme gruvbox
+
+hi Normal guibg=NONE ctermbg=NONE
 
 " let the configuration begin
 set hidden
