@@ -16,6 +16,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kylef/apiblueprint.vim'
 Plug 'lambdalisue/suda.vim' 
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
