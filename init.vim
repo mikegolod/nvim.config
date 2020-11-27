@@ -26,6 +26,7 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 
 call plug#end()
 
