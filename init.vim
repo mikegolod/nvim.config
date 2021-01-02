@@ -70,6 +70,19 @@ nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
+
+" Git Gutter mappings
+nnoremap <silent> <Leader>ggP <cmd>GitGutterPreview<CR>
+nnoremap <silent> <Leader>ggp <cmd>GitGutterPrevHunk<CR>
+nnoremap <silent> <Leader>ggn <cmd>GitGutterNextHunk<CR>
+nnoremap <silent> <Leader>ggX <cmd>GitGutterUndoHunk<CR>
+nnoremap <silent> <Leader>ggS <cmd>GitGutterStageHunk<CR>
+
+
+" Git mappings
+nnoremap <silent> <Leader>gc <cmd>Git commit<CR>
+
+
 " lightline configuration
 let g:lightline = {
 	\ 'active': {
