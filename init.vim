@@ -44,6 +44,9 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 " TypeScript LSP server config
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 
+" Svelte language server config
+lua require'lspconfig'.svelte.setup{on_attach=require'completion'.on_attach}
+
 hi Normal guibg=NONE ctermbg=NONE
 
 " let the configuration begin
