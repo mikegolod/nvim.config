@@ -1,6 +1,6 @@
 " vim:ts=4:sw=4
 " make sure vim-plug is installed
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
+if empty(glob(stdpath('config') . '/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
 	  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
