@@ -28,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
