@@ -1,3 +1,5 @@
+let g:neovide_transparency = 0.8
+set guifont=Hack:h16
 " vim:ts=4:sw=4
 " make sure vim-plug is installed
 if empty(glob(stdpath('config') . '/autoload/plug.vim'))
@@ -30,6 +32,7 @@ Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'mhinz/vim-startify'
 Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 call plug#end()
 
@@ -86,12 +89,14 @@ let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:false
 let g:compe.source.vim_dadbod_completion = v:true
 
+
 " nvim-compe mappings
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
 
 " nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
@@ -115,6 +120,16 @@ nnoremap <silent> <Leader>ggS <cmd>GitGutterStageHunk<CR>
 " Git mappings
 nnoremap <silent> <Leader>gc <cmd>Git commit<CR>
 
+
+" nvim-treesitter config
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = "maintained",
+    highlight = { enable = true },
+    incremental_selection = { enable = true },
+    textobjects = { enable = true },
+}
+EOF
 
 " lightline configuration
 let g:lightline = {
