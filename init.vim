@@ -1,5 +1,5 @@
-let g:neovide_transparency = 0.8
-set guifont=Hack:h16
+let g:neovide_transparency=0.8
+set guifont=Hack:h14
 " vim:ts=4:sw=4
 " make sure vim-plug is installed
 if empty(glob(stdpath('config') . '/autoload/plug.vim'))
@@ -28,11 +28,18 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'mhinz/vim-startify'
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+source ~/.config/nvim/plugins/floaterm.vim
+source ~/.config/nvim/plugins/vim-test.vim
+source ~/.config/nvim/plugins/nvim-jdtls.vim
 
 call plug#end()
 
@@ -64,6 +71,11 @@ set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+
+" default indent settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " nvim-compe options
 let g:compe = {}
@@ -120,11 +132,16 @@ nnoremap <silent> <Leader>ggS <cmd>GitGutterStageHunk<CR>
 " Git mappings
 nnoremap <silent> <Leader>gc <cmd>Git commit<CR>
 
+" Telescope mappings
+nnoremap <Leader>ff <cmd>Telescope find_files<CR>
+nnoremap <Leader>fb <cmd>Telescope buffers<CR>
+nnoremap <Leader>fg <cmd>Telescope live_grep<CR>
+
 
 " nvim-treesitter config
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = "maintained",
+	ensure_installed = "all",
     highlight = { enable = true },
     incremental_selection = { enable = true },
     textobjects = { enable = true },
